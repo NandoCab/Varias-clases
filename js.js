@@ -160,7 +160,10 @@ function subFunction3(value) {
 
 myBigFunction()*/
 
-function displayMessage() {
+
+
+//function displayMessage() {
+/*function displayMessage(msgText, msgType) {
     var html = document.querySelector("html");
 
     var panel = document.createElement("div");
@@ -169,9 +172,10 @@ function displayMessage() {
 
     html.appendChild(panel);
 
-    var msg = document.createElement("p");
+    var msg = document.createElement("p");*/
 
-    msg.textContent = "This is a message box";
+    //msg.textContent = "This is a message box";
+    /*msg.textContent = msgText;
 
     panel.appendChild(msg);
 
@@ -184,8 +188,41 @@ function displayMessage() {
     closeBtn.onclick = function() {
         panel.parentNode.removeChild(panel);
     }
+
+    if(msgType === "warning") {
+        panel.style.backgroundColor = "red";
+    } else if (msgType === "that") {
+        panel.style.backgroundColor = "aqua";
+    } else {
+        panel.style.paddingLeft = "20px";
+    }
 }
 
-var btn = document.querySelector("button");
+var btn = document.querySelector("button");*/
 
-btn.onclick = displayMessage;
+//btn.onclick = displayMessage;
+/*btn.onclick = function() {
+    displayMessage("Who, this a different message.", "warning");
+};*/
+
+
+
+var btn =document.querySelector("button");
+
+function random(number) {
+    return Math.floor(Math.random()*(number+1));
+}
+
+/*btn.onclick = function() {
+    var rndCol = "rgb("+ random(255) + "," + random(255) + "," + random(255) + ")";
+    document.body.style.backgroundColor = rndCol;   
+}*/
+
+function bgChange(e) {
+    var rndCol = "rgb("+ random(255) + "," + random(255) + "," + random(255) + ")";
+    document.body.style.backgroundColor = rndCol;
+    console.log("e: ", e);
+}
+
+btn.addEventListener("click", bgChange);
+//btn.removeEventListener("click",bgChange);
